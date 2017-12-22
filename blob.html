@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<style>
+  img {
+    width: 300px;
+    height: 300px;
+  }
+</style>
+
+<body>
+  <a download="data.txt" id="getData">下载</a>
+  <audio id="audio" src="" controls></audio>
+  <img id="img" src="" alt="">
+  <!-- http://nc.zongxueguan.com/uploads/mp3/20170817/9b706074e7adc17ee5666fbde70a222c.mp3 -->
+</body>
+<script>
+  var img =
+    'http://imgsrc.baidu.com/image/c0%3Dshijue1%2C0%2C0%2C294%2C40/sign=3d2175db3cd3d539d530078052ee8325/b7003af33a87e950c1e1a6491a385343fbf2b425.jpg';
+
+  var audio = 'http://nc.zongxueguan.com/uploads/mp3/20170817/9b706074e7adc17ee5666fbde70a222c.mp3';
+  window.URL = window.URL || window.webkitURL;
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', img,true);
+  xhr.responseType = 'blob';
+  xhr.send()
+
+  xhr.onload = function (e) {
+    if (this.status == 200) {
+      var blob = this.response;
+      console.log(blob);
+
+      var URL = window.URL || window.webkitURL;
+      var objectUrl = URL.createObjectURL(blob);
+      img.onload = function (e) {
+        window.URL.revokeObjectURL(img.src);
+      };
+
+      document.getElementById('img').src = objectUrl;
+    }
+  };
+
+
+
+
+
+
+  // var blob = new Blob([audio], {
+  //   type: 'audio/ogg'
+  // });
+  // console.log(blob);
+
+
+  // var URL = window.URL || window.webkitURL; //兼容处理
+  // var objectUrl = URL.createObjectURL(blob);
+  // img.onload = function (e) {
+  //   window.URL.revokeObjectURL(audio.src); // 释放 url.
+  // };
+
+  // document.getElementById('audio').src = objectUrl;
+</script>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>创建对象</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  /* 工厂模式创建对象 */
+  function boss(name, age) {
+    var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.FN = function () {
+      document.write(this.name + '<br>' + this.age);
+    }
+    return o;
+  };
+  var person = boss('webarn', 34);
+  // person.FN();
+
+  /* 工厂模式创建对象 */
+  function Person(name, age) {
+    this.name = name;
+    this.age = age;
+    this.Fn = function () {
+      console.log(this.name + '+' + this.age);
+    }
+  }
+  var person1 = new Person('werban', 34);
+  // person1.Fn();
+
+  /* 原型模式 */
+  function Fn2() {};
+  Fn2.prototype.name = 'webarn';
+  Fn2.prototype.age = '35';
+  var fn2 = new Fn2();
+  fn2.name = 'ajax';
+  console.log(fn2.name)
+</script>
+
+</html>

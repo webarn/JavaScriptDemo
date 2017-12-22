@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>正则匹配</title>
+	<script src="./js/vue.min.js"></script>
+	<style>
+		#app{
+			width: 80%;
+			height: 80vh;
+			border: 1px solid skyblue;
+			padding: 50px;
+			margin: auto;
+			text-align: center;
+		}
+		input{
+			width: 200px;
+			height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<input type="text" v-model='reg'> <button @click="btn">正则匹配</button>
+		<p>{{reg}}</p>
+		<p>{{mat}}</p>
+	</div>
+</body>
+<script>
+	Vue.config.debug = true
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			reg:'',
+
+		},
+		computed: {
+			mat(){
+				return this.reg.match(/1/)
+				// return /[1-9]\d*/.test(this.reg);
+			}
+		},
+		methods: {
+			btn(){
+
+			}
+		}
+	})
+</script>
+</html>

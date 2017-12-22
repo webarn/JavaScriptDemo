@@ -1,0 +1,25 @@
+ <!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>条件渲染</title>
+	<script src="./js/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<h1 v-if="ifT">Vue.js条件渲染</h1>
+		<h1 v-if="ifF">Vue.js条件渲染</h1>
+		<h1 v-for="i in res">{{i}}</h1>
+	</div>
+</body>
+<script>
+	Vue.config.debug = true
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			ifT: true, 
+			ifF: false,
+			res:[{0:1},{1:1},{2:2}]
+		}
+	})
+</script>
+</html>

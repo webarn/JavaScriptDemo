@@ -1,0 +1,15 @@
+body {
+  font-size: 16px; }
+
+.a {
+  width: 300px;
+  height: 300px;
+  border: 1px solid red;
+  font-size: 16px; }
+  .a .b {
+    font-size: 30px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid cadetblue; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,29 @@
+ <!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>监控属性</title>
+	<script src="./js/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		数量: <input type="number" v-model.lazy="a"><br>
+		单价: {{b}}元<br>
+		总计: {{c}}元
+	</div>
+</body>
+<script>
+	Vue.config.debug = true
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			a: 0,
+			b:9.99,
+		},
+		computed: { 
+			c: function(){
+				return this.a * this.b
+			}
+		}
+	})
+</script>
+</html>

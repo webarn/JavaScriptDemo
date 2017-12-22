@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-for</title>
+	<script src="./js/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<h1 v-for="(i,index) in object" :key=index>{{index}}: {{i.msg}}</h1>
+		<button @click="btn1">检测匹配</button>
+		<button @click="btn2">合并</button>
+		<button @click="btn3">切割</button>
+	</div>
+</body>
+<script>
+	Vue.config.debug = true
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			object: [{msg:'one'},{msg:'two'},{msg:'three'},{msg:'four'}],
+			object1: [{msg:'five'},{msg:'six'},{msg:'sevent'}]
+		},
+		methods: {
+			btn1(){
+				this.object = this.object.filter(function(item){
+					//正则检测匹配
+					return item.msg.match(/o/)
+				})
+			},
+			//合并数据
+			btn2(){
+				this.object = this.object.concat(this.object1[0])
+				this.object = this.object.concat(this.object1[1])
+				this.object = this.object.concat(this.object1[2])
+			},
+			//分割数据
+			btn3(){
+				this.object = this.object.splice(1,2)
+			},
+		}
+	})
+</script>
+</html>

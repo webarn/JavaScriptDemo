@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Array</title>
+</head>
+<body>
+	
+</body>
+<script>
+	try {
+		(function(){
+			var n = 0;
+			var time = null;
+			time = setInterval(function(){
+				n++;
+				console.log(n);
+				if(n > 15){
+					clearInterval(time);
+				}
+			},1000)
+		}())
+	} catch(e) {
+		console.log(e);
+	}
+</script>
+</html>

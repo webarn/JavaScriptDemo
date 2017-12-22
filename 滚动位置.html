@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    .box {
+      height: 3000px;
+      width: 375px;
+      border: 1px solid #ccc;
+      box-sizing: border-box
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+</body>
+
+<script>
+  //网页可见区域高
+  var a = document.body.clientHeight;
+  //网页下滑的距离
+  var b = document.body.scrollTop;
+  //屏幕分辨率的高
+  var c = window.screen.height;
+  window.addEventListener('scroll', function add() {
+    console.log(document.documentElement.scrollTop);
+    // console.log(((document.body.scrollTop + window.screen.height) / document.body.clientHeight));
+    // if (((document.body.scrollTop + window.screen.height) / document.body.clientHeight) > 0.8) {
+    //   console.log('80%');
+    // }
+  });
+</script>
+
+</html>

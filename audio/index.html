@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ch-zn">
+<head>
+	<meta charset="UTF-8">
+	<title>Audio</title>
+	<!-- <link rel="stylesheet" href="css/reset.css" /> -->
+	<!-- <link rel="stylesheet" href="css/demo.css" /> -->
+	<link rel="stylesheet" href="css/audioplayer.css" />
+</head>
+<body>
+	<div id="wrapper">
+			<audio preload="auto" controls>
+				<source src="./BlueDucks_FourFlossFiveSix.mp3">
+			</audio>
+			<script src="js/jquery.js"></script>
+			<script src="js/audioplayer.js"></script>
+			<script>$( function() { $( 'audio' ).audioPlayer(); } );</script>
+		</div>
+</body>
+</html>

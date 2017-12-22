@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>HTML5 拖放</title>
+	<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+	<style>
+		.box{
+			border: 5px solid #eaae4d;
+		}
+		li{
+			padding: 10px;
+			margin: 10px;
+			border: 2px dotted #ccc;
+		}
+		.box1{
+			border: 5px solid #aadd33;
+			margin-top: 30px;
+		}
+		.box1 ul{
+			padding: 10px 40px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li draggable="true" id="li01">li-1</li>
+			<li draggable="true" id="li02">li-2</li>
+			<li draggable="true" id="li03">li-3</li>
+			<li draggable="true" id="li04">li-4</li>
+			<li draggable="true" id="li05">li-5</li>
+			<li draggable="true" id="li06">li-6</li>
+			<li draggable="true" id="li07">li-7</li>
+		</ul>
+	</div>
+	<div class="box1">
+		<ul id="ul">
+			
+		</ul>
+	</div>
+</body>
+<script>
+
+$('.box').on('dragstart','li',function(event){
+	event.dataTransfer.setData("",event.target.id);
+});
+
+$('.box1 ul').on('drop',function(event){
+	// console.log(event.target.nodeName);
+	console.log(event.dataTransfer);
+	var data = event.dataTransfer.getData("");
+	
+	if(event.target.id === 'ul'){
+		event.target.appendChild(document.getElementById(data));
+	}
+
+	event.dataTransfer.addElement($('#ul'))
+});
+
+$('.box1 ul').on('dragover',function(event){
+	event.preventDefault();
+})
+
+
+
+/*---------------------------------------------------------*/
+
+/*
+//移动开始
+$('.box').on('dragstart','li',function(){
+	// console.log('移动开始')
+});
+
+//移动中
+$('.box').on('drag','li',function(){
+	// console.log('移动中')
+})
+
+//移入新元素
+$('.box').on('dragenter','li',function(event){
+	console.log('移入新元素');
+	console.log(event.dataTransfer)
+})
+
+//移入新元素
+// $('.box, .box1').on('dragleave','li',function(){
+// 	// console.log('移入新元素')
+// })
+
+//移入新元素
+// $('.box, .box1').on('dragover','li',function(){
+// 	console.log('移入新元素')
+// })
+
+//移入新元素
+// $('.box, .box1').on('drop','li',function(){
+// 	console.log('移入新元素')
+// })
+*/
+</script>
+</html>

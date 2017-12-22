@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>函数节流</title>
+</head>
+<body>
+    <script type="text/javascript">
+        n=0;
+        function resizehandler(){
+            console.log(new Date().getTime());
+            console.log(++n);
+        }
+        function throttle(method,context){
+        	clearTimeout(method.tId);
+        	method.tId = setTimeout(function(){
+        		method.call(context);
+        	},500)
+        }
+
+        window.onresize=function(){
+        	throttle(resizehandler,window);
+        };
+
+        if (navigator.onLine) {
+					console.log(window.performance)
+				} else {
+					console.log('离线')
+				}
+				if(typeof(Worker)!=='undefined'){
+					console.log('支持');
+
+				}else{
+					console.log('不支持')
+				}
+				var p1 = new Promise(function (resolve, reject) {
+				    setTimeout(resolve, 500, 'P1');
+				});
+				var p2 = new Promise(function (resolve, reject) {
+				    setTimeout(resolve, 3000, 'P2');
+				});
+				// 同时执行p1和p2，并在它们都完成后执行then:
+				Promise.all([p1, p2]).then(function (results) {
+				    console.log(results); // 获得一个Array: ['P1', 'P2']
+				}); 
+				
+				
+
+				
+    </script>
+</body>
+</html>

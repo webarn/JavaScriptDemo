@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>文件转base64</title>
+	<style>
+		#imgDiv{
+			width: 80px;
+			height: 80px;
+			border: 1px solid cyan;
+			margin-top: 30px;
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+		}
+	</style>
+</head>
+<body>
+	<input type="file" id="file" accept="image/*"/>
+	<div id="imgDiv"></div> 
+	<p id="content"></p>
+</body>
+<script>
+var box = document.getElementById('imgDiv');
+var p = document.getElementById('content');
+
+file.onchange = function(){
+	var file = document.getElementById('file').files[0];
+	console.log(file);
+	var reader = new FileReader();
+	reader.readAsDataURL(file);
+	reader.onload = function(){
+		p.innerText = this.result;
+		console.log(p.innerText);
+		console.log(typeof(this.result))
+		box.style.background = 'url('+this.result+')'
+		box.style.backgroundSize = '100% 100%';
+	}
+}
+
+</script>
+</html>

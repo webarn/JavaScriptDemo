@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>日历图标</title>
+	<link rel="stylesheet" type="text/css" href="./iconfont.css">
+	<script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+	<style>
+		.iconfont{
+			font-size: 48px;
+			color: #ccc;
+			margin: 0 30px;
+			cursor: pointer;
+		}
+		.au{
+			color: red;
+		}
+		.box{
+			width: 80%;
+			margin: 100px auto;
+			text-align: center;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="box">
+		<i class="iconfont au">&#xf0343</i>
+		<i class="iconfont ">&#xf0344</i>
+		<i class="iconfont ">&#xf0346</i>
+		<i class="iconfont ">&#xf0345</i>
+		<i class="iconfont ">&#xf0347</i>
+		<i class="iconfont ">&#xf0349</i>
+		<i class="iconfont ">&#xf0348</i>
+	</div>
+</body>
+<script>
+	$(function(){
+		$('.box').on('click','i',function(){
+			$('.iconfont').removeClass('au');
+			$(this).addClass('au');
+		})
+	})
+</script>
+</html>

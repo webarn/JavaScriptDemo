@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+		.st {
+			color: red;
+		}
+	</style>
+</head>
+
+<body>
+	<ul>
+		<li>星期一</li>
+		<li>星期二</li>
+		<li>星期三</li>
+		<li>星期四</li>
+		<li>星期五</li>
+		<li>星期六</li>
+		<li>星期日</li>
+	</ul>
+</body>
+<script>
+	function one() {
+		$('ul').on('click', 'li:gt(1)', function () {
+			if (this.style.color == '') {
+				this.style.color = 'red';
+				$(this).siblings().css('color', '');
+			} else if (this.style.color == 'red') {
+				this.style.color = '';
+			}
+			two(this.innerText)
+		})
+
+		// two(this.innerText);
+	}
+	function two() {
+		console.log()
+	}
+	one();
+	two;
+
+</script>
+
+</html>

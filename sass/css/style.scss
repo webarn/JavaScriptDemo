@@ -1,0 +1,20 @@
+$fontSize: 16px;
+$bol: false;
+body{
+  font-size:$fontSize;
+}
+.a{
+  width: 300px;
+  height: 300px;
+  border: 1px solid red;
+  font-size: $fontSize;
+  .b{
+    @if($bol){
+      background: fuchsia;
+    }
+    font-size: 30px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid cadetblue;
+  }
+}

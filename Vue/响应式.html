@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue数据响应式</title>
+	<script src="./js/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<input type="button" value="追加" @click="btn">
+		<div>{{o2}}</div>
+	</div>
+</body>
+<script>
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			o1:{},
+			o2:{a:1}
+		},
+		methods: {
+			//Object.assign方式
+			// btn(){
+			// 	this.o2 = Object.assign({},this.o2,{b:2,c:{d:3,e:4}})
+			// }
+			//set方式
+			btn(){
+				this.$set(this.o2,'dw',{'text':'set方式'})
+			}
+		}
+	})
+</script>
+</html>

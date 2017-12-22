@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Keycode</title>
+</head>
+<body>
+	<input type="text">
+
+	<script>
+		var inpit = document.getElementsByTagName('input')[0];
+		console.log(inpit);
+		inpit.onkeydown = function(event){
+			alert(event.keyCode)
+		}
+	</script>
+</body>
+</html>

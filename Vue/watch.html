@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>计算属性</title>
+	<script src="./js/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		数量: <input type="number" v-model="a"><br>
+		改变后:{{b}}, 改变前:{{c}}
+	</div>
+</body>
+<script>
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			a: 0,
+			b:'',
+			c:'',
+		},
+		watch: {
+			a: function(n,o){
+				this.b = n,
+				this.c = o
+			}
+		}
+	})
+</script>
+</html>

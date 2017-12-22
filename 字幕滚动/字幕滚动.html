@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字幕滚动</title>
+	<style>
+		body{
+			margin: 30px;
+		}
+		.boss{
+			height: 30px;
+			width: 400px;
+			overflow: hidden;
+			position: relative;
+		}
+		.box{
+			display: block;
+			width: 1000%;
+			height: 30px;
+			position: absolute;
+			overflow: hidden;
+			animation: marquee 5s linear infinite;
+		}
+		.boss span {
+			float: left;
+			width: 50%;
+		}
+
+		@keyframes marquee {
+		    0% { left: 0; }
+		    100% { left: -100%; }
+		}
+	</style>
+</head>
+<body>
+
+<div class="boss">
+	<div class="box">
+		<span>1 . 人生这条路，说难也很难，说易也简单，风雨人生，是艰难，风云世界，是患难，命里有的何须求，命里没有何强求，或许，这就是生存，这就是命运，这就是人生。</span>
+		<span>2 .人生这条路，说难也很难，说易也简单，风雨人生，是艰难，风云世界，是患难，命里有的何须求，命里没有何强求，或许，这就是生存，这就是命运，这就是人生。</span>
+	</div>
+</div>
+
+
+<!-- <marquee behavior="alternate" direction="left">人生这条路，说难也很难，说易也简单，风雨人生，是艰难，风云世界，是患难，命里有的何须求，命里没有何强求，或许，这就是生存，这就是命运，这就是人生。</marquee> -->
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.boss{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			background: rgba(0,0,0,0.4);
+			z-index: 9;
+			display: none;
+		}
+		button{
+			font-size: 20px;
+		}
+		.box{
+			width: 30%;
+			height: 40%;
+			opacity: 1;
+			background: #78ad7a;;
+			border: 3px solid #fff;
+			margin: 20% auto;
+			z-index: 10;
+		}
+	</style>
+</head>
+<body>
+	<button class="btn1" onclick="click()">查看</button>
+	<div class="boss">
+		<div class="box">
+			<button class="btn2">关闭</button>
+		</div>
+	</div>
+</body>
+<script>
+	var btn1 = document.getElementsByClassName('btn1')[0];
+	var btn2 = document.getElementsByClassName('btn2')[0];
+	var boss = document.getElementsByClassName('boss')[0];
+	btn1.onclick = function (){
+		boss.style.display = 'block';
+	}
+	btn2.onclick = function (){
+		boss.style.display = 'none';
+	}
+</script>
+</html>

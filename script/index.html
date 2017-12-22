@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>时间轴</title>
+  <script src="main.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    .box {
+      width: 150px;
+      height: 30px;
+      border: 1px solid orange;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .box::before {
+      content: '播放';
+      line-height: 30px;
+      margin-left: 15px;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+  <!--<span>语音时间: 257</span>-->
+</div>
+<audio id="audio" src="http://other.web.ri01.sycdn.kuwo.cn/resource/n1/92/98/1853792463.mp3"></audio>
+</body>
+<script>
+  var audio = document.getElementById('audio');
+  //http://other.web.ri01.sycdn.kuwo.cn/resource/n1/92/98/1853792463.mp3
+    let box = $('.box');
+    box.click(function () {
+        var time = parseInt(audio.duration);
+        var p = `<span>语音时间: ${time}S</span>`;
+        if (box.width() === 150) {
+            width = '300px';
+            audio.play();
+            $('.box').append(p);
+        } else {
+            width = '150px';
+            $('.box span').remove();
+            audio.pause();
+        }
+        console.log(time);
+        box.animate({
+            width: width
+        }, 2000);
+    });
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>text</title>
+	<script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/textillate/0.4.0/jquery.textillate.min.js"></script>
+	<script src="http://cdn.bootcss.com/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+	<link href="http://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+	<style>
+		.box{
+			font-size: 24px;
+			padding: 20px;
+			border: 3px dotted red;
+			margin-top: 200px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">江上阴云锁梦魂，江边深夜舞刘琨。<br>秋风万里芙蓉国，暮雨千家薜荔村。<br>乡思不堪悲橘柚，旅游谁肯重王孙。<br>渔人相见不相问，长笛一声归岛门。</div>
+</body>
+<script>
+$(function () {
+	$('.box').textillate({
+		selector: '.texts',
+		loop: true,
+	});
+})
+</script>
+</html>

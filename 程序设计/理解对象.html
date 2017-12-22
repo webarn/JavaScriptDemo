@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>理解对象</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  var parson = new Object();
+  parson.name = 'webarn';
+  parson.sex = 'man';
+  parson.age = '26';
+  parson.Fn = function () {
+    // document.write(this.name, this.sex, this.age);
+  }
+  // parson.Fn();
+
+  /* 数据属性 */
+  var person = {
+    name: 'Nicholas'
+  };
+  // document.write(person.name + '<br>');
+  Object.defineProperty(person, 'name', {
+    // writable: false,
+    value: 'webarn'
+  });
+  // document.write(person.name);
+
+  /* 工厂模式创建对象 */
+  function boss(name, age) {
+    var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.FN = function () {
+      document.write(this.name + '<br>' + this.age);
+    }
+    return o;
+  }
+  boss('webarn', 34);
+</script>
+
+</html>

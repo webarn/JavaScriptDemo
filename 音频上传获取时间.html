@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>文件上传</title>
+  <script language="JavaScript" src="http://code.jquery.com/jquery-1.11.0.js"></script>
+</head>
+
+<body>
+  <audio src="" id="audio"></audio>
+  <input type="file"><br>
+  <hr>
+  <button onclick="btn()">提交</button>
+</body>
+<script>
+  function getObjectURL(file) {
+    var url = null;
+    if (window.createObjectURL != undefined) { // basic  
+      url = window.createObjectURL(file);
+    } else if (window.URL != undefined) { // mozilla(firefox)  
+      url = window.URL.createObjectURL(file);
+    } else if (window.webkitURL != undefined) { // webkit or chrome  
+      url = window.webkitURL.createObjectURL(file);
+    }
+    return url;
+  }
+
+  function btn() {
+    var file = document.querySelector('input').files[0];
+    var objUrl = getObjectURL(file);
+    $("#audio").attr("src", objUrl);
+    setTimeout(function () {
+      console.log($("#audio")[0].duration);
+    }, 1000);
+  };
+</script>
+
+</html>

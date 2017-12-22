@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS选择器</title>
+	<link rel="stylesheet" type="text/css" href="./iconfont.css">
+	<style>
+		h2{
+			color: cyan;
+		}
+		h2 + p{
+			color: blue;
+		}
+		p[title]{
+			color: #eae66a;
+		}
+		[title]:hover {
+			font-size: 24px;
+		}
+		a.tooltip{
+			position: relative;
+		}
+		a.tooltip span{
+			display: none;
+		}
+		a.tooltip:hover span{
+			display: block;
+			position: absolute;
+			top: 1em;
+			left: 2em;
+		}
+		ol a{
+			display: inline-block;
+			/*border: 1px solid red;*/
+			margin: 5px;
+		}
+		ol a[rel]:hover:before{
+			content:'\2602';
+			/*content: attr(title);*/
+		}
+	</style>
+</head>
+<body>
+	<h2 class="web-font">这是H2标签</h2>
+	<p>第一个p标签</p>
+	<p title="test">第二个p标签</p>
+	<p>第三个p标签</p>
+	<div class="box">DIV</div>
+	<a href="http://www.baidu.com" class="tooltip">hover hover <span>小弹窗</span></a>a这是a练级
+	<ol>
+		<li><a href="" rel="prev" title="上一页">Prev</a></li>
+		<li><a href="">1</a></li>
+		<li><a href="" >2</a></li>
+		<li><a href="" >3</a></li>
+		<li><a href="" >4</a></li>
+		<li><a href="" rel="text" title="上一页">Text</a></li>
+	</ol>
+	<i class="icon-accessory">ii</i>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BOM</title>
+</head>
+
+<body>
+  <div class="boss">
+    <div class="box">
+      <div class="p1">上来看到解放路上看到积分</div>
+      <div class="p1">上来看到解放路上看到积分</div>
+      <div class="p1">上来看到解放路上看到积分</div>
+    </div>
+  </div>
+  <button onclick='btn()'>按钮</button>
+  <input type="text" pattern="\d+">
+</body>
+<script>
+  function btn() {
+    var el = document.querySelectorAll('.p1');
+    el.scrollIntoView();
+  }
+</script>
+
+</html>

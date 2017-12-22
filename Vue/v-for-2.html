@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-for-2</title>
+<script src="./js/vue.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<ul>
+			<li v-for="list in items" >{{list}}</li>
+		</ul>
+		<button @click="btn">不能改变数组</button>
+		<button @click="btn1">可以改变数组</button>
+	</div>
+</body>
+<script>
+	Vue.config.debug = true
+	var vm = new Vue({
+		el:'#app',
+		data:{
+			items: [
+  {
+    "id": "58",
+    "title": "讲贯堂：二期招生即将推出",
+    "create_time": "2017-05-26 11:48:02",
+  },
+  {
+    "id": "48",
+    "title": "肆成人有德，小子有造",
+    "create_time": "2017-05-26 10:55:13",
+  }
+],
+	sum:{
+		num:5,
+		num:3,
+		num:1,
+	}
+		},
+		methods: {
+			btn(){
+				//修改数组不能更新渲染
+				this.items[4] = {num:5}
+			},
+			btn1(){
+				//修改数组并更新渲染
+				this.$set(this.items[0],"num",5)
+			}
+		}
+	})
+</script>
+</html>
